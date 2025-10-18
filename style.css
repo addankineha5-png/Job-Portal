@@ -1,0 +1,38 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .auth-container, .landing-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+  }
+  
+  input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  button, .btn {
+    padding: 10px 20px;
+    background: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  button:hover, .btn:hover {
+    background: #0056b3;
+  }
+  

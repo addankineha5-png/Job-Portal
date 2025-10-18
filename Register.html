@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register - Job Portal</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      background: #0a1a2a;
+      color: #fff;
+    }
+
+    /* Particles container */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0; left: 0;
+      background: linear-gradient(135deg, #0a1a2a 0%, #132f4c 100%);
+    }
+
+    /* Form container */
+    .auth-container {
+      position: relative;
+      z-index: 1;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 60px auto;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      color: #e0eaf1;
+    }
+
+    form input {
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    form input::placeholder {
+      color: #ccc;
+    }
+    form input:focus {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 8px #63a4ff;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 14px 0;
+      background: #3a86ff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 12px #3a86ff88;
+    }
+    button[type="submit"]:hover {
+      background: #265ddb;
+      box-shadow: 0 6px 20px #265ddbcc;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #a0b4d6;
+    }
+    p a {
+      color: #3a86ff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    p a:hover {
+      color: #265ddb;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .auth-container {
+        margin: 30px 20px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particles background -->
+  <div id="particles-js"></div>
+
+  <div class="auth-container">
+    <h2>Create Your Account</h2>
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+    <p>
+      Already have an account? <a href="login.html">Login here</a>
+    </p>
+  </div>
+
+  <!-- Particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <script>
+    /* Initialize particles.js */
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: "#3a86ff" },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: { enable: false }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: { enable: false }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#3a86ff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          bounce: false,
+          attract: { enable: false }
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - Job Portal</title>
+
+  <!-- Google Fonts & Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    * {
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0a1a2a, #132f4c);
+      color: #e0eaf1;
+      min-height: 100vh;
+    }
+    .sidebar {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 30px 20px;
+      backdrop-filter: blur(10px);
+    }
+    .sidebar h3, .sidebar h5 {
+      color: #fff;
+    }
+    .form-check-label {
+      color: #ccc;
+    }
+    .job-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .job-card:hover {
+      transform: translateY(-5px);
+    }
+    .save-btn {
+      background-color: #ff6363;
+      border: none;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+    .save-btn.saved {
+      background-color: #28a745;
+    }
+    .saved-jobs {
+      cursor: pointer;
+      font-weight: 600;
+      color: #ff6363;
+    }
+    .profile-name {
+      font-weight: 600;
+    }
+    .form-control {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: #ff6363;
+      box-shadow: 0 0 0 0.2rem rgba(255, 99, 99, 0.25);
+    }
+    .btn-primary {
+      background-color: #ff6363;
+      border-color: #ff6363;
+    }
+    .btn-primary:hover {
+      background-color: #d04141;
+      border-color: #d04141;
+    }
+    .btn-outline-secondary {
+      border-color: #ccc;
+      color: #ccc;
+    }
+    .btn-outline-secondary:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Sidebar -->
+      <aside class="col-lg-3 col-md-4 sidebar">
+        <h3>Filters</h3>
+        <div class="mb-4">
+          <h5>Job Type</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="fullTime" checked />
+            <label class="form-check-label" for="fullTime">Full-time</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="partTime" checked />
+            <label class="form-check-label" for="partTime">Part-time</label>
+          </div>
+        </div>
+        <div class="mb-4">
+          <h5>Experience Level</h5>
+          <div class="form-check">
+            <input class="form-check-input expLevel" type="checkbox" value="Entry" id="expEntry" checked />
+            <label class="form-check-label" for="expEntry">Entry</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input expLevel" type="checkbox" value="Mid" id="expMid" checked />
+            <label class="form-check-label" for="expMid">Mid</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input expLevel" type="checkbox" value="Senior" id="expSenior" checked />
+            <label class="form-check-label" for="expSenior">Senior</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="col-lg-9 col-md-8 py-4">
+
+        <!-- Top Nav -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-3">
+          <div class="flex-grow-1 d-flex gap-2">
+            <input type="text" id="searchBox" class="form-control" placeholder="Search job titles..." />
+            <button class="btn btn-primary" onclick="searchJobs()">Search</button>
+          </div>
+          <div class="d-flex align-items-center gap-3 flex-wrap">
+            <div id="savedJobsCount" class="saved-jobs" title="Saved Jobs (click to view)">
+              Saved Jobs: 0
+            </div>
+            <div id="profileName" class="profile-name">Hi, User</div>
+            <button class="btn btn-outline-secondary" onclick="logout()">Logout</button>
+          </div>
+        </div>
+
+        <!-- Job Listings -->
+        <div id="jobList">
+          <!-- Example card -->
+          <!-- 
+          <div class="job-card">
+            <h5>Software Developer</h5>
+            <p>Company: XYZ Corp</p>
+            <p>Location: Remote</p>
+            <button class="save-btn" onclick="toggleSave(this)">Save</button>
+          </div>
+          -->
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dashboard.js" defer></script>
+
+</body>
+</html>

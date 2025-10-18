@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Job Portal</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Reset & base */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+      body,
+      html {
+        height: 100%;
+        overflow: hidden;
+        background: #0a1a2a;
+        color: #fff;
+      }
+
+      /* Particles container */
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        background: linear-gradient(135deg, #0a1a2a 0%, #132f4c 100%);
+      }
+
+      /* Form container */
+      .auth-container {
+        position: relative;
+        z-index: 1;
+        max-width: 400px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 60px auto;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 24px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        color: #e0eaf1;
+      }
+
+      form input {
+        width: 100%;
+        padding: 14px 18px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+      }
+      form input::placeholder {
+        color: #ccc;
+      }
+      form input:focus {
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 8px #ff6363;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 14px 0;
+        background: #ff6363;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        box-shadow: 0 4px 12px #ff636388;
+      }
+      button[type="submit"]:hover {
+        background: #d04141;
+        box-shadow: 0 6px 20px #d0414188;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #a0b4d6;
+      }
+      p a {
+        color: #ff6363;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      p a:hover {
+        color: #d04141;
+      }
+
+      /* Responsive */
+      @media (max-width: 480px) {
+        .auth-container {
+          margin: 30px 20px;
+          padding: 30px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Particles background -->
+    <div id="particles-js"></div>
+
+    <div class="auth-container">
+      <h2>Login to Your Account</h2>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+
+    <!-- Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+      /* Initialize particles.js with triangles */
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 50, density: { enable: true, value_area: 900 } },
+          color: { value: "#ff6363" },
+          shape: {
+            type: "triangle",
+            stroke: { width: 0, color: "#000" },
+            polygon: { nb_sides: 3 },
+          },
+          opacity: {
+            value: 0.4,
+            random: true,
+            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
+          },
+          size: {
+            value: 4,
+            random: true,
+            anim: { enable: true, speed: 3, size_min: 1, sync: false },
+          },
+          line_linked: {
+            enable: false,
+          },
+          move: {
+            enable: true,
+            speed: 3,
+            direction: "bottom",
+            random: true,
+            straight: false,
+            bounce: false,
+            attract: { enable: false },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "bubble" },
+            onclick: { enable: true, mode: "repulse" },
+            resize: true,
+          },
+          modes: {
+            bubble: {
+              distance: 150,
+              size: 6,
+              duration: 2,
+              opacity: 0.8,
+              speed: 3,
+            },
+            repulse: { distance: 200, duration: 0.4 },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
